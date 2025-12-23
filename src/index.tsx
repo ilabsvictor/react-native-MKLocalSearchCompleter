@@ -57,23 +57,27 @@ class AddressAutocomplete {
     return promise;
   };
 
-  static getAddressSuggestions = async (address: string): Promise<string[]> => {
-    const promise = new Promise<string[]>(async (resolve, reject) => {
-      if (Platform.OS === 'android') {
-        reject('Only IOs supported.');
-      }
-      if (address.length > 0) {
-        try {
-          const suggestions =
-            await NativeAddressAutocomplete.getAddressSuggestions(address);
-          resolve(suggestions);
-        } catch (err) {
-          reject(err);
+  static getAddressSuggestions = async (
+    address: string
+  ): Promise<Array<{ title: string; subtitle: string }>> => {
+    const promise = new Promise<Array<{ title: string; subtitle: string }>>(
+      async (resolve, reject) => {
+        if (Platform.OS === 'android') {
+          reject('Only IOs supported.');
         }
-      } else {
-        reject('Address length should be greater than 0');
+        if (address.length > 0) {
+          try {
+            const suggestions =
+              await NativeAddressAutocomplete.getAddressSuggestions(address);
+            resolve(suggestions);
+          } catch (err) {
+            reject(err);
+          }
+        } else {
+          reject('Address length should be greater than 0');
+        }
       }
-    });
+    );
     return promise;
   };
 

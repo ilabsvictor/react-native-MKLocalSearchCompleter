@@ -28,7 +28,7 @@ export type ReverseGeocodeResult = {
 };
 declare class AddressAutocomplete {
     static getAddressDetails: (address: string) => Promise<AddressDetails>;
-    static getAddressSuggestions: (address: string) => Promise<string[]>;
+    static getAddressSuggestions: (address: string) => Promise<Array<{ title: string; subtitle: string }>>;
     static reverseGeocodeLocation: (longitude: number, latitude: number) => Promise<ReverseGeocodeResult>;
 }
 export default AddressAutocomplete;

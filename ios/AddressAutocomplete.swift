@@ -103,10 +103,12 @@ class AddressAutocomplete: NSObject, MKLocalSearchCompleterDelegate {
         // FIXED: Store the suggestion results for later use
         self.suggestionResults = completer.results
         
-        let results = completer.results.flatMap { (result) -> String? in
-            return result.title + " " + result.subtitle
+        let results = completer.results.map { (result) -> [String: String] in
+            return [
+                "title": result.title,
+                "subtitle": result.subtitle
+            ]
         }
-        print(completer.results) // Prints
         self.resolver?(results)
     }
 
