@@ -64,9 +64,8 @@ class AddressAutocomplete {
       }
       if (address.length > 0) {
         try {
-          const suggestions = await NativeAddressAutocomplete.getAddressSuggestions(
-            address
-          );
+          const suggestions =
+            await NativeAddressAutocomplete.getAddressSuggestions(address);
           resolve(suggestions);
         } catch (err) {
           reject(err);
