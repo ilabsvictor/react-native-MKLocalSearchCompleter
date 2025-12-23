@@ -23,7 +23,7 @@ export type ReverseGeocodeResult = {
   administrativeArea?: string | null;
   subAdministrativeArea?: string | null;
   postalCode?: string | null;
-  ISOcountryCode?: string | null;
+  isoCountryCode?: string | null;
   country?: string | null;
   inlandWater?: string | null;
   ocean?: string | null;

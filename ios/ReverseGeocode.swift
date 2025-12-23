@@ -26,7 +26,7 @@ class ReverseGeocode: NSObject {
                     "administrativeArea": pm.administrativeArea,
                     "subAdministrativeArea": pm.subAdministrativeArea,
                     "postalCode": pm.postalCode,
-                    "ISOcountryCode": pm.ISOcountryCode,
+                    "isoCountryCode": pm.isoCountryCode,
                     "country": pm.country,
                     "inlandWater": pm.inlandWater,
                     "ocean": pm.ocean,
