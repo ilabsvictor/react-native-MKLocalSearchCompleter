@@ -1,4 +1,4 @@
-export declare type AddressDetails = {
+export type AddressDetails = {
     title: string;
     coordinate: {
         latitude: number;
@@ -11,7 +11,7 @@ export declare type AddressDetails = {
         latitudeDelta: number;
     };
 };
-export declare type ReverseGeocodeResult = {
+export type ReverseGeocodeResult = {
     name?: string | null;
     thoroughfare?: string | null;
     subThoroughfare?: string | null;

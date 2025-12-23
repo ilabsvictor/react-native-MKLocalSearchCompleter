@@ -1,9 +1,5 @@
 module.exports = {
   source: 'src',
   output: 'lib',
-  targets: [
-    'commonjs',
-    ['module', { sourceMaps: true }],
-  ],
+  targets: ['commonjs', ['module', { sourceMaps: true }], 'typescript'],
 };
-
